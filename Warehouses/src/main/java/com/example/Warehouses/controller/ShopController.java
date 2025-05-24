@@ -39,7 +39,7 @@ public class ShopController {
     public ResponseEntity<Shop> create(@RequestBody ShopDTO dto){
         Shop shop = new Shop();
 
-        if (!dto.getWarehouses_id().isEmpty() || !dto.getProducts_id().isEmpty()){
+        if (dto.getProducts_id() != null || dto.getWarehouses_id() != null || !dto.getWarehouses_id().isEmpty() || !dto.getProducts_id().isEmpty()){
             List<Product> products = new ArrayList<>();
             List<Warehouse> warehouses = new ArrayList<>();
 

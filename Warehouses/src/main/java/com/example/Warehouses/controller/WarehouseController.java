@@ -42,7 +42,7 @@ public class WarehouseController {
 
         Warehouse warehouse = new Warehouse();
 
-        if (dto.getShops_id() != null){
+        if (dto.getProducts_id() != null || dto.getShops_id() != null || dto.getShops_id().isEmpty() || !dto.getProducts_id().isEmpty()){
             List<Product> products = new ArrayList<>();
             List<Shop> shops = new ArrayList<>();
 
