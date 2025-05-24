@@ -33,7 +33,7 @@ public class WarehouseController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Warehouse> getProduct(@PathVariable String id){
+    public ResponseEntity<Warehouse> getWarehouse(@PathVariable String id){
         return ResponseEntity.ok(warehouseService.getWarehouse(id));
     }
 
@@ -42,7 +42,7 @@ public class WarehouseController {
 
         Warehouse warehouse = new Warehouse();
 
-        if (dto.getProducts_id() != null || dto.getShops_id() != null || dto.getShops_id().isEmpty() || !dto.getProducts_id().isEmpty()){
+        if (dto.getProducts_id() != null && dto.getShops_id() != null && !dto.getShops_id().isEmpty() && !dto.getProducts_id().isEmpty()) {
             List<Product> products = new ArrayList<>();
             List<Shop> shops = new ArrayList<>();
 
